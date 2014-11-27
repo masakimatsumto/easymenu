@@ -112,14 +112,29 @@ a {
 	vertical-align: middle;
 }
 #userText{
-	padding: 10px 5px;
-	background-color: #fcfbf5;
+	width: 320px;
+	z-index: 100;
+	position: fixed;
+	bottom: 100px;
+	display:block;
+	table-layout: 
 }
 #userText div{
-	margin: 10px;
+	width: 300px;
+	margin: auto;
+	background-color: #fcfbf5;
+	border: 2px solid #e2dbc9;
+	border-radius: 5px;
+}
+#userText h3{
+	margin: 5px 5px 0px 10px;
+	font-size: 18px;
 }
 #userText form{
-	margin: 10px;
+	margin: 5px 10px;
+}
+#userText form textarea{
+	padding: 5px;
 }
 #userText button{
 	margin-top: 10px;

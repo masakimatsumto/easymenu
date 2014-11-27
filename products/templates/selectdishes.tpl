@@ -6,6 +6,7 @@
 		<!-- Loading Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/main.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -48,26 +49,42 @@
 		</section>
 
 		<section id="userText">
-			<h3>買い物メモ</h3>
-			{if $userText}
 			<div>
-				{$userText|nl2br}
+				<h3>買い物メモ</h3>
+				<form action="/easymenu/updateusertext" method="post">
+					<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
+				<button type="submit" class="btn btn-default">保存</button>
+				<button id="closeuserText" class="btn btn-default">閉じる</button>
+				</form>
 			</div>
-			{/if}
-			<form action="/easymenu/updateusertext" method="post">
-				<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
-			<button type="submit" class="btn btn-default">保存</button>
-			</form>
 		</section>
 		
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default">HOME</a>
-			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリーの追加 / 削除</a>
+			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリー編集</a>
+			<botton id="memo" class="btn btn-default">メモ</botton>
 		</section>
 		
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
+
+		<script type="text/javascript">
+		$(function(){
+			$("#userText").hide();
+
+			$("#memo").click(function(){
+				$("#userText").show();
+				return false;
+			});
+
+			$("#closeuserText").click(function(){
+				$("#userText").hide();
+				return false;
+			});
+		});
+
+		</script>
 		
 	</body>
 </html>
