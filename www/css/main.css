@@ -1,0 +1,289 @@
+/* 全体 */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+body {
+  margin:0;
+  color: #4d2200;
+}
+a {
+	color:#4d2200;
+}
+#navi {
+	margin: 0px 10px 20px;
+}
+#navi a.btn {
+	width: 300px;
+	display: block;
+	border-color: #e2dbc9;
+	font-size:15px;
+	vertical-align: middle;
+}
+#footerNavi {
+	padding: 10px 10px;
+	width: 100%;
+	z-index: 100;
+	position: fixed;
+	bottom: 0px;
+	display:block;
+	background-color: #fcfbf5;
+	border-top: 1px solid #e2dbc9;
+}
+#footer {
+	margin-top: 20px;
+	height: 200px;
+	padding: 80px 0px;
+	background-color: #fcfbf5;
+	text-align: center;
+	display:block;
+	border-top: 1px solid #e2dbc9;
+}
+
+
+
+/* top */
+
+#selecteddishes{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#selecteddishes div.title{
+	background-color: #ffe6cc;
+}
+#selecteddishes div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#selecteddishes div.list{
+	padding: 5px 0px;
+}
+#selecteddishes div.list div{
+	border-bottom:  1px solid #e2dbc9;
+}
+#selecteddishes div h4{
+	line-height: 1.5;
+	padding: 3px 0px 3px 10px;
+	margin: 5px 0px;
+	display: table;
+	font-size: 16px;
+}
+#selecteddishes div h4 span{
+	background-color: #caac71;
+	color: white;
+	font-weight: bold;
+	padding: 4px 5px;
+	font-size: 13px;
+	vertical-align: middle;
+}
+#selecteddishes div h4 a {
+ 	display: table-cell;
+	vertical-align: middle;
+}
+#selecteddishes div h4 a.btn {
+ 	background-color: #fcfbf5;
+ 	border-color: #e2dbc9;
+ 	display: inline-block;
+ 	margin-left: 10px;
+}
+
+
+/* selectdishes */
+
+#weeklydisheslist h3{
+	background-color: #ffe6cc;
+	padding: 5px 10px;
+	margin:0;
+}
+#weeklydisheslist p{
+	display: block;
+	font-size: 16px;
+	margin: 0px;
+	padding: 5px 10px;
+	border-bottom: 1px solid #e2dbc9;
+}
+#weeklydisheslist p span{
+	background-color: #caac71;
+	color: white;
+	font-weight: bold;
+	padding: 4px 5px;
+	font-size: 13px;
+	vertical-align: middle;
+}
+#userText{
+	padding: 10px 5px;
+	background-color: #fcfbf5;
+}
+#userText div{
+	margin: 10px;
+}
+#userText form{
+	margin: 10px;
+}
+#userText button{
+	margin-top: 10px;
+}
+
+
+#weeklydisheslist p a.glyphicon-remove{
+	margin-left: 10px;
+	color: #e2dbc9;
+	border: 1px solid #e2dbc9;
+}
+#weeklydisheslist p a.btn-warning{
+	background-color: #ff9933;
+}
+
+
+
+/* updateselectdishes*/
+
+#recdishlist div.title{
+	background-color: #ffe6cc;
+	}
+#recdishlist div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#recdishlist div.dishlist{
+	border-bottom: 1px solid #e2dbc9;
+	padding: 0px 5px;
+}
+#recdishlist div.dishlist h4{
+	font-size: 16px;
+}
+#recdishlist div.dishlist h4 a.make{
+	background-color: #ff9933;
+}
+#recdishlist div.noitem h4{
+	margin: 10px;
+}
+#recdishlist div.noitem a.btn{
+	margin: 10px;
+	width: 300px;
+	display: block;
+	border-color: #e2dbc9;
+	font-size:15px;
+	vertical-align: middle;	
+}
+
+
+/* dishes */
+
+#dishdetail {
+}
+#dishdetail div.title{
+	background-color: #ffe6cc;	
+}
+#dishdetail div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#dishdetail div.dishinfo{
+	background-color: #fcfbf5;
+	padding: 10px;
+	border-bottom: 1px solid #e2dbc9;
+}
+#dishdetail div.dishinfo p{
+	margin-top:10px;
+}
+#dishdetail form{
+	margin-top: 10px;
+	padding: 5px;
+	background-color: #fcfbf5;
+}
+#dishdetail form h4{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+#dishdetail form button{
+	margin: 10px 0px;
+}
+
+
+/* updatemydishes  deletemydishes*/
+
+#otherdishes {
+	margin-bottom: 20px;	
+}
+#otherdishes div.title{
+	background-color: #ffe6cc;
+	}
+#otherdishes div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#otherdishes div#navBotton{
+	margin: 10px;
+	padding: 5px 0px;
+}
+#otherdishes div#navBotton a.btn{
+	background-color: #ffffff;
+	width: 150px;
+}
+
+#otherdishes div.list{
+	border-bottom: 1px solid #e2dbc9;
+	padding: 0px 5px;
+	font-size: 16px;
+}
+#otherdishes div.list h4{
+	font-size: 16px;
+}
+#otherdishes div.list h4 span{
+	background-color: #caac71;
+	color: white;
+	font-weight: bold;
+	padding: 4px 5px;
+	font-size: 13px;
+	vertical-align: middle;
+}
+#otherdishes div a.btn{
+	background-color: #ff9933;
+}
+
+
+/* makedish */
+
+#makedish a{
+	width:300px;
+	padding: 10px;
+}
+#makedish div.title{
+	background-color: #ffe6cc;
+}
+#makedish div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#makedish form{
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #fcfbf5;
+}
+#makedish form h4{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+#makedish form button{
+	margin: 10px 0px;
+}
+
+
+/* login */
+
+#login {
+	margin: 100px 0px;
+}
+#login a.btn{
+	width: 300px;
+	display: block;
+	background-color: #3B5998;
+	color: white;
+	font-size:20px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+
