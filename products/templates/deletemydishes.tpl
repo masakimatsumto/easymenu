@@ -37,7 +37,7 @@
 		</sectison>
 
 		<section id ="footerNavi">
-			<a href="/easymenu/" class="btn btn-default">HOME</a>
+			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 		</section>
 
 		<section id="footer">

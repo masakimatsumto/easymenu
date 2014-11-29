@@ -37,8 +37,8 @@
 		</sectison>
 
 		<section id ="footerNavi">
-			<a href="/easymenu/" class="btn btn-default">HOME</a>
-			<a href="/easymenu/makedish" class="btn btn-default">見つからないから料理を登録</a>
+			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
+			<a href="/easymenu/makedish" class="btn btn-default">新しい料理を登録</a>
 		</section>
 
 		<section id="footer">

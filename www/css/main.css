@@ -116,8 +116,6 @@ a {
 	z-index: 100;
 	position: fixed;
 	bottom: 100px;
-	display:block;
-	table-layout: 
 }
 #userText div{
 	width: 300px;
@@ -139,8 +137,6 @@ a {
 #userText button{
 	margin-top: 10px;
 }
-
-
 #weeklydisheslist p a.glyphicon-remove{
 	margin-left: 10px;
 	color: #e2dbc9;
@@ -149,7 +145,35 @@ a {
 #weeklydisheslist p a.btn-warning{
 	background-color: #ff9933;
 }
+#pastdishes{
+	margin: 10px;
+}
+#pastdishes a{
+	width: 300px;
+}
 
+/* pastselectdishes */
+
+#pastdisheslist h3{
+	background-color: #ffe6cc;
+	padding: 5px 10px;
+	margin:0;
+}
+#pastdisheslist p{
+	display: block;
+	font-size: 16px;
+	margin: 0px;
+	padding: 5px 10px;
+	border-bottom: 1px solid #e2dbc9;
+}
+#pastdisheslist p span{
+	background-color: #caac71;
+	color: white;
+	font-weight: bold;
+	padding: 4px 5px;
+	font-size: 13px;
+	vertical-align: middle;
+}
 
 
 /* updateselectdishes*/

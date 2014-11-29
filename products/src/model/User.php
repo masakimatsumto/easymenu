@@ -148,4 +148,28 @@ class User{
 		return $mydishes;
 	}
 
+
+	// 過去の献立を取得
+	static public function pastSelectedList($app, $uid){
+		
+		$stmt = $app->db->prepare('SELECT date , dishids FROM selecteddishes WHERE user_id = :userId  ORDER BY date ASC');
+		$stmt ->execute(array(':userId' => $uid));
+		while($item = $stmt->fetch(PDO::FETCH_ASSOC)){
+			$arr[$item['date']] = json_decode($item['dishids'], true);
+		}
+		
+		
+		if (isset($arr)){
+			foreach($arr as $key => $dishids){
+				foreach($dishids as $dishId){
+					$dishData = Dish::getDishData($app, $dishId);
+					$pastselectedlist[$key][] = $dishData;
+				}
+			}
+		}
+
+		return $pastselectedlist;
+	
+	}
+
 }

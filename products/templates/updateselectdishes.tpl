@@ -25,7 +25,7 @@
 					<div class="dishlist">
 						<h4>
 							<a href="/easymenu/updateselectdishes/{$day}/{$recid}" class="btn btn-warning make btn-xs">作る</a>
-							<a href="/easymenu/dishes/{$recid}">{$dishname}</a>
+							{$dishname}
 						</h4>
 					</div>
 				{/foreach}
@@ -40,7 +40,7 @@
 		</section>
 		
 		<section id ="footerNavi">
-			<a href="/easymenu/" class="btn btn-default">HOME</a>
+			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
 		</section>
 

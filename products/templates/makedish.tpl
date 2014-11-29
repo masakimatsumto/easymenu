@@ -32,7 +32,7 @@
 		</section>
 
 		<section id ="footerNavi">
-			<a href="/easymenu/" class="btn btn-default">HOME</a>
+			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
 		</section>
 

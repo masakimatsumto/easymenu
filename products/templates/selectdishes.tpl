@@ -48,6 +48,10 @@
 				{/foreach}
 		</section>
 
+		<section id ="pastdishes">
+			<a href="/easymenu/pastselectdishes" class="btn btn-default">過去の献立を見る</a>
+		</section>
+
 		<section id="userText">
 			<div>
 				<h3>買い物メモ</h3>
@@ -59,7 +63,7 @@
 		</section>
 		
 		<section id ="footerNavi">
-			<a href="/easymenu/" class="btn btn-default">HOME</a>
+			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリー編集</a>
 			<botton id="memo" class="btn btn-default">メモ</botton>
 		</section>
