@@ -53,8 +53,7 @@
 				<h3>買い物メモ</h3>
 				<form action="/easymenu/updateusertext" method="post">
 					<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
-				<button type="submit" class="btn btn-default">保存</button>
-				<button id="closeuserText" class="btn btn-default">閉じる</button>
+					<button type="submit" class="btn btn-default">保存</button>
 				</form>
 			</div>
 		</section>
@@ -68,23 +67,21 @@
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
-
-		<script type="text/javascript">
-		$(function(){
-			$("#userText").hide();
-
-			$("#memo").click(function(){
-				$("#userText").show();
-				return false;
-			});
-
-			$("#closeuserText").click(function(){
-				$("#userText").hide();
-				return false;
-			});
-		});
-
-		</script>
 		
+		<script type="text/javascript">
+			$(function(){
+				$("#userText").hide();
+				
+				$('#memo').click(function(){
+					
+					if ($('#userText').css('display') == 'block') {
+						$('#userText').css('display','none');
+					} else {
+						$('#userText').css('display','block');
+					}
+				});
+			});
+		</script>
+
 	</body>
 </html>
