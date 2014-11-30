@@ -34,7 +34,7 @@
 					<h4>
 						選べるレパートリーがありません<br>
 					</h4>
-						<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリーに料理を追加する</a>
+						<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリーに料理を追加する</a>
 				</div>
 			{/if}
 		</section>

@@ -51,7 +51,7 @@
 		</section>
 		
 		<section id ="footerNavi">
-			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリーの編集</a>
+			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリーの編集</a>
 		</section>
 		
 		<section id="footer">

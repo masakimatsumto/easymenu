@@ -152,6 +152,7 @@ a {
 	width: 300px;
 }
 
+
 /* pastselectdishes */
 
 #pastdisheslist h3{
@@ -247,7 +248,7 @@ a {
 	margin-bottom: 20px;	
 }
 #otherdishes div.title{
-	background-color: #ffe6cc;
+	background-color: #CCE198;
 	}
 #otherdishes div.title h3{
 	margin: 0 10px;
@@ -261,7 +262,6 @@ a {
 	background-color: #ffffff;
 	width: 150px;
 }
-
 #otherdishes div.list{
 	border-bottom: 1px solid #e2dbc9;
 	padding: 0px 5px;
@@ -279,7 +279,8 @@ a {
 	vertical-align: middle;
 }
 #otherdishes div a.btn{
-	background-color: #ff9933;
+	background-color: #889b00;
+	border: 1px solid #889b00;
 }
 
 

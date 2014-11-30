@@ -1,7 +1,8 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html lang-"ja">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="language" content="ja">
 		<!-- Loading Bootstrap -->
         <link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
@@ -14,28 +15,33 @@
 	    <![endif]-->
 	</head>
 	<body>
-
-		<section id="makedish">
+	
+		<section id="otherdishes">
 			<div class="title">
-				<h3>料理を登録</h3>
+				<h3>料理の編集</h3>
 			</div>
-			<form action="/easymenu/makedish" method="post">
-				<h4>料理名</h4>
-				<textarea class="form-control" rows="1" name="dishName"></textarea>
-				<h4>カテゴリ</h4>
-				<select name="tag1" class="form-control">
-					<option value="1">主菜</OPTION>
-					<option value="2">副菜</OPTION>
-				</select>
-				<button type="submit" class="btn btn-default">登録</button>
+			
+			<div id="navBotton" class="btn-group" role="group">
+				<a href="" class="btn btn-default" disabled="disabled">料理の追加</a>
+				<a href="/easymenu/deletemydishes" class="btn btn-default">料理の削除</a>
+			</div>
+			<form action="/easymenu/insertmydishes" method="post">
+
+			{foreach from=$otherlist item=dishinfo}
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox" name ="{$dishinfo.id}" value="{$dishinfo.id}"> {$dishinfo.dishname}
+				    </label>
+				  </div>
+			{/foreach}
+
+			<button type="submit" class="btn btn-default">Submit</button>
 			</form>
-			新規で登録した料理は、レパートリーに自動で追加されるので、
-			献立で選択できるようになっています。
-		</section>
+		</sectison>
 
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
-			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
+			<a href="/easymenu/makedish" class="btn btn-default">新しい料理を登録</a>
 		</section>
 
 		<section id="footer">

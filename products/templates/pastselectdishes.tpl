@@ -34,10 +34,13 @@
 		
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
-			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリー編集</a>
+			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリー編集</a>
 			<botton id="memo" class="btn btn-default">メモ</botton>
 		</section>
 		
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
-		</secti
+		</section>
+
+	</body>
+</html>

@@ -22,7 +22,7 @@
 			</div>
 			
 			<div id="navBotton" class="btn-group" role="group">
-				<a href="/easymenu/updatemydishes" class="btn btn-default">料理の追加</a>
+				<a href="/easymenu/insertmydishes" class="btn btn-default">料理の追加</a>
 				<a href="" class="btn btn-default" disabled="disabled">料理の削除</a>
 			</div>
 			

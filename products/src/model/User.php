@@ -51,53 +51,6 @@ class User{
 	}
 
 
-	// 自分の作れる献立に料理を追加
-	static public function updateMydishList($app, $uid, $dishId){
-		
-		$stmt = $app->db->prepare('SELECT mydishes FROM users WHERE id = :userId');
-		$stmt ->execute(array(':userId' => $uid));
-		$item = $stmt->fetch(PDO::FETCH_ASSOC);
-		$mydishlist = json_decode($item['mydishes'], true);
-		
-		if($dishId){
-			if (in_array($dishId, $mydishlist)){
-				return;
-			}else{
-				$mydishlist[] = intval($dishId);
-				$a = json_encode($mydishlist);
-				
-				$stmt = $app->db->prepare('UPDATE users SET mydishes = :a WHERE id = :userId');
-				$stmt ->execute(array(':a' => $a, ':userId' => $uid));
-				
-				return;
-			}
-		}else{
-			// 未登録の料理をすべて出す
-			
-			$stmt = $app->db->prepare('SELECT id FROM dishes');
-			$stmt ->execute();
-			while($item = $stmt->fetch(PDO::FETCH_ASSOC)){
-				$alldishlist[] = $item["id"];
-			}
-
-			if(isset($mydishlist)){
-				foreach($mydishlist as $dellist){
-					$d = array_search($dellist, $alldishlist);
-				unset($alldishlist[$d]);
-				}
-			}
-
-			$otherlist = array();
-
-			foreach($alldishlist as $dishIds){
-				$dishData = Dish::getDishData($app, $dishIds);
-				$otherlist[] = $dishData;
-			}
-		}
-		return $otherlist;
-	}
-
-
 	// User Text を更新
 	static public function updateUserText($app, $uid, $text){
 		
@@ -171,5 +124,52 @@ class User{
 		return $pastselectedlist;
 	
 	}
+
+
+	// 自分の作れる献立に料理を追加
+	static public function insertMydishList($app, $uid, $dishId){
+		
+		$stmt = $app->db->prepare('SELECT mydishes FROM users WHERE id = :userId');
+		$stmt ->execute(array(':userId' => $uid));
+		$item = $stmt->fetch(PDO::FETCH_ASSOC);
+		$mydishlist = json_decode($item['mydishes'], true);
+		
+		if($dishId){
+			foreach ($dishId as $value) {
+				$mydishlist[] = $value;
+			}
+
+			$a = json_encode($mydishlist);
+			$stmt = $app->db->prepare('UPDATE users SET mydishes = :a WHERE id = :userId');
+			$stmt ->execute(array(':a' => $a, ':userId' => $uid));
+			
+			return;
+
+		}
+			// 未登録の料理をすべて出す
+			
+			$stmt = $app->db->prepare('SELECT id FROM dishes');
+			$stmt ->execute();
+			while($item = $stmt->fetch(PDO::FETCH_ASSOC)){
+				$alldishlist[] = $item["id"];
+			}
+
+			if(isset($mydishlist)){
+				foreach($mydishlist as $dellist){
+					$d = array_search($dellist, $alldishlist);
+				unset($alldishlist[$d]);
+				}
+			}
+
+			$otherlist = array();
+
+			foreach($alldishlist as $dishIds){
+				$dishData = Dish::getDishData($app, $dishIds);
+				$otherlist[] = $dishData;
+			}
+
+		return $otherlist;
+	}
+
 
 }

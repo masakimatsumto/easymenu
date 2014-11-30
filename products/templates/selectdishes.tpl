@@ -54,7 +54,7 @@
 
 		<section id="userText">
 			<div>
-				<h3>買い物メモ</h3>
+				<h3>買物メモ</h3>
 				<form action="/easymenu/updateusertext" method="post">
 					<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
 					<button type="submit" class="btn btn-default">保存</button>
@@ -64,8 +64,8 @@
 		
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
-			<a href="/easymenu/updatemydishes" class="btn btn-default">レパートリー編集</a>
-			<botton id="memo" class="btn btn-default">メモ</botton>
+			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリー編集</a>
+			<botton id="memo" class="btn btn-default">買物メモ</botton>
 		</section>
 		
 		<section id="footer">
