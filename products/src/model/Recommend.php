@@ -3,7 +3,7 @@
 class Recommend{
 	
 	// レコメンドのリストを取得
-	static public function getRecList($app, $uid, $day, $cat){
+	static public function getRecList($app, $uid, $cat){
 
 		if($cat == "main"){
 			$b = 1;

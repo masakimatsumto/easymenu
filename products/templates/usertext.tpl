@@ -1,8 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang-"ja">
+﻿<html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="language" content="ja">
 		<!-- Loading Bootstrap -->
         <link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
@@ -14,35 +13,25 @@
 	    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <![endif]-->
 	</head>
-	<body>	
+	<body>
 
-		<section id="otherdishes">
-			<div class="title">
-				<h3>レパートリーの編集</h3>
+		<section id="userTextAll">
+				<h3>買物メモ</h3>
+				<form action="/easymenu/updateusertext" method="post">
+					<textarea class="form-control" rows="15" name="text">{$userText}</textarea>
+					<button type="submit" class="btn btn-default">保存</button>
+				</form>
 			</div>
-			
-			<div id="navBotton" class="btn-group" role="group">
-				<a href="/easymenu/insertmydishes" class="btn btn-default">料理の追加</a>
-				<a href="" class="btn btn-default" disabled="disabled">料理の削除</a>
-			</div>
-			
-			{foreach from=$mydishes item=dishinfo}
-				<div class="list">
-					<h4>
-						<a href="/easymenu/deletemydishes/{$dishinfo.id}" class="btn btn-warning btn-xs">削除</a>
-						{$dishinfo.dishname}
-					</h4>
-				</div>
-			{/foreach}
-		</sectison>
+		</section>
 
-		<section id ="footerNavi">
+		<section id="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
+			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
 		</section>
 
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
-
+		
 	</body>
 </html>

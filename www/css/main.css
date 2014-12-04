@@ -137,6 +137,9 @@ a {
 #userText button{
 	margin-top: 10px;
 }
+#userText a{
+	margin-top: 10px;
+}
 #weeklydisheslist p a.glyphicon-remove{
 	margin-left: 10px;
 	color: #e2dbc9;
@@ -152,6 +155,23 @@ a {
 	width: 300px;
 }
 
+
+/* usertext */
+
+#userTextAll h3{
+	background-color: #ffe6cc;
+	padding: 5px 10px;
+	margin:0;
+}
+#userTextAll form{
+	margin: 5px 10px;
+}
+#userTextAll form textarea{
+	padding: 5px;
+}
+#userTextAll button{
+	margin-top: 10px;
+}
 
 /* pastselectdishes */
 
@@ -186,6 +206,10 @@ a {
 	margin: 0 10px;
 	padding: 5px 0px;
 }
+#recdishlist form{
+	margin: 10px;
+}
+
 #recdishlist div.dishlist{
 	border-bottom: 1px solid #e2dbc9;
 	padding: 0px 5px;
@@ -242,7 +266,49 @@ a {
 }
 
 
-/* updatemydishes  deletemydishes*/
+/* insertmydishes */
+
+#insertdishes {
+	margin-bottom: 20px;	
+}
+#insertdishes div.title{
+	background-color: #CCE198;
+	}
+#insertdishes div.title h3{
+	margin: 0 10px;
+	padding: 5px 0px;
+}
+#insertdishes div#navBotton{
+	margin: 10px;
+	padding: 5px 0px;
+}
+#insertdishes div#navBotton a.btn{
+	background-color: #ffffff;
+	width: 150px;
+}
+#insertdishes form div.checkbox{	
+	border-bottom: 1px solid #e2dbc9;
+	padding: 0px 10px;
+}
+#insertdishes form div.checkbox label{
+	font-size: 16px;
+	display: block;
+	margin: 10px 0px;
+}
+#insertdishes form button{	
+	padding: 10px 10px;
+	width: 300px;
+	margin: 0 10px;
+	z-index: 100;
+	position: fixed;
+	bottom: 70px;
+	display:block;
+	background-color: #889b00;
+	border: 1px solid #889b00;
+	color: white;
+}
+
+/* deletemydishes */
 
 #otherdishes {
 	margin-bottom: 20px;	

@@ -31,20 +31,13 @@
 								<a href="/easymenu/deleteselectdishes/{$day}/{$dish.id}" class="btn btn-xs glyphicon glyphicon-remove"></a>
 							</p>
 						{/foreach}
-					<p>
-						<span>主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">追加する</a>
-					</p>
-					<p>
-						<span>副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">追加する</a>
-					</p>
-					{else}
-					<p>
-						<span>主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">決める</a>
-					</p>
-					<p>
-						<span>副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">決める</a>
-					</p>
 					{/if}
+					<p>
+						<span>主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+					</p>
+					<p>
+						<span>副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+					</p>
 				{/foreach}
 		</section>
 
@@ -58,6 +51,7 @@
 				<form action="/easymenu/updateusertext" method="post">
 					<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
 					<button type="submit" class="btn btn-default">保存</button>
+					<a href="/easymenu/usertext" class="btn btn-default">全画面</a>
 				</form>
 			</div>
 		</section>

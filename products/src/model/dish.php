@@ -202,5 +202,22 @@ class Dish{
 		$stmt = $app->db->prepare('UPDATE users SET useddishes = :q WHERE id = :userId');
 		$stmt ->execute(array(':q' => $q, ':userId' => $uid));
 	}	
-	
+
+	// 献立検索の結果を取得
+	static public function searchRecommenddishes($app, $uid, $cat, $keyword){
+		$searchResult = array();
+
+		$reclist = Recommend::getRecList($app, $uid, $cat);
+		foreach ($reclist as $dishId => $dishName) {
+
+			if(mb_strpos($dishName, $keyword)!==FALSE){
+				$searchResult[$dishId] = $dishName;
+			}
+
+		}
+
+		return $searchResult;
+
+	}
+
 }

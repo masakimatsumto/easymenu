@@ -7,7 +7,7 @@
 	if($id2 == "main" or $id2 == "sub"){
 		// レコメンドを取得
 		$cat = $id2;
-		$reclist = Recommend::getRecList($app, $uid, $day, $cat);
+		$reclist = Recommend::getRecList($app, $uid, $cat);
 
 	}else{
 
@@ -27,6 +27,7 @@
 	
 	$app->render("updateselectdishes.tpl",array(
 		'uid' => $uid ,
+		'cat' => $cat ,
 		'day' => $day ,
 		'reclist' => $reclist
 		));

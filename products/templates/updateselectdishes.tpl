@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="language" content="ja">
+		<meta name="language" content="ja">
 		<!-- Loading Bootstrap -->
-        <link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/easymenu/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/easymenu/css/main.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	    <!--[if lt IE 9]>
@@ -20,6 +21,11 @@
 			<div class="title">
 				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})のおすすめ</h3>
 			</div>
+			<form action="/easymenu/searchrecommenddishes" method="post" >
+				<input class="form-control" name="keyword" placeholder="{if isset($keyword)}{$keyword}{else}検索{/if}" id="search">
+				<input type="hidden" name="day" value="{$day}">
+				<input type="hidden" name="cat" value="{$cat}">
+			</form>
 			{if is_array($reclist)}
 				{foreach from=$reclist item=dishname key=recid}
 					<div class="dishlist">
@@ -47,6 +53,12 @@
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
+
+		<script type="text/javascript">
+			$('#search').click(function(){
+				$('#search').attr('placeholder','');
+			});
+		</script>
 
 	</body>
 </html>

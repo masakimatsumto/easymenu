@@ -7,6 +7,7 @@
 		<!-- Loading Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/main.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -15,11 +16,10 @@
 		<![endif]-->
 	</head>
 	<body>
-		
 		<section id="navi">
 			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立を決める</a>
 		</section>
-
+		
 		<section id="promotion">
 		</section>
 
@@ -57,6 +57,6 @@
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
-
+		
 	</body>
 </html>
