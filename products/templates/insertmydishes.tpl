@@ -26,7 +26,7 @@
 				<a href="" class="btn btn-default" disabled="disabled">料理の追加</a>
 				<a href="/easymenu/deletemydishes" class="btn btn-default">料理の削除</a>
 			</div>
-			<form action="/easymenu/insertmydishes" method="post">
+			<form action="/easymenu/insertmydishes" method="post" id="insertForm">
 				{foreach from=$otherlist item=dishinfo}
 					<div class="checkbox {$dishinfo.id}">
 						<label>
@@ -34,32 +34,44 @@
 						</label>
 					</div>
 				{/foreach}
-				<button id="insertButton" type="submit" class="btn btn-default">追加する</button>
+				<button id="insertButton" class="btn btn-default" value="追加する" type="" onclick="return false;">追加</button>
 			</form>
 		</sectison>
 
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/makedish" class="btn btn-default">新しい料理を登録</a>
+		</section>
 
+		<section id="insertMessage">
+			<div>登録完了！</div>
 		</section>
 
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
 
-
 		<script type="text/javascript">
-		
 			$(function(){
 				$("#insertButton").hide();
+				$("#insertMessage").hide();
 				
 				$('label').click(function(){
 					$('#insertButton').css('display','block');
 				});
 			});
-			
 		</script>
-
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#insertButton").click(function () {
+					$("#insertMessage").fadeIn("slow");
+					setTimeout(function () {
+						$("#insertForm").submit();
+					}, 1000);
+				});
+			});
+		</script>
+		
 	</body>
 </html>
