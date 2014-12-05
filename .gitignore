@@ -1,2 +1,5 @@
 .DS_Store
 products/.DS_Store
+products/compiled/
+products/templates/.DS_Store
+products/config.php
