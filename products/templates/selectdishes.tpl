@@ -51,6 +51,7 @@
 				<form action="/easymenu/updateusertext" method="post">
 					<textarea class="form-control" rows="6" name="text">{$userText}</textarea>
 					<button type="submit" class="btn btn-default">保存</button>
+					<a href="/easymenu/updateusertext" class="btn btn-default">消す</a>
 					<a href="/easymenu/usertext" class="btn btn-default">全画面</a>
 				</form>
 			</div>

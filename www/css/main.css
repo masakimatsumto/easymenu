@@ -172,6 +172,9 @@ a {
 #userTextAll button{
 	margin-top: 10px;
 }
+#userTextAll a{
+	margin-top: 10px;
+}
 
 
 /* pastselectdishes */
@@ -392,6 +395,9 @@ a {
 }
 #makedish form button{
 	margin: 10px 0px;
+}
+#makedish p{
+	margin: 10px 10px;
 }
 
 

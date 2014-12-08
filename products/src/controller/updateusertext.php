@@ -1,6 +1,12 @@
 ﻿<?php
 	$uid = $_SESSION['login_user_id'];
-	$text = $_POST['text'];
+
+
+	if(!isset($_POST['text']) || $_POST['text']===''){
+		$text = "";
+	} else {
+		$text = $_POST['text'];
+	}
 
 	// 料理情報の更新
 	$userText = User::updateUserText($app, $uid, $text);

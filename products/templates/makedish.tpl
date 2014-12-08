@@ -17,7 +17,7 @@
 
 		<section id="makedish">
 			<div class="title">
-				<h3>料理を登録</h3>
+				<h3>新しい料理を登録</h3>
 			</div>
 			<form action="/easymenu/makedish" method="post">
 				<h4>料理名</h4>
@@ -29,8 +29,10 @@
 				</select>
 				<button type="submit" class="btn btn-default">登録</button>
 			</form>
-			新規で登録した料理は、レパートリーに自動で追加されるので、
-			献立で選択できるようになっています。
+			<p>
+				新しく登録した料理は、レパートリーに自動で追加されるので、
+				献立で選べるようになっています。
+			</p>
 		</section>
 
 		<section id ="footerNavi">

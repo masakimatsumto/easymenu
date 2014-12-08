@@ -20,6 +20,7 @@
 				<form action="/easymenu/updateusertext" method="post">
 					<textarea class="form-control" rows="15" name="text">{$userText}</textarea>
 					<button type="submit" class="btn btn-default">保存</button>
+					<a href="/easymenu/updateusertext" class="btn btn-default">消す</a>
 				</form>
 			</div>
 		</section>
