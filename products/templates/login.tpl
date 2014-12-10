@@ -17,6 +17,9 @@
 	<body>
 	
 		<section id="login">
+			<div id="title">
+				かんたん献立
+			</div>
 			<a href="{$loginUrl}" class="btn btn-default">facebookでログイン</a>
 		</section>
 		

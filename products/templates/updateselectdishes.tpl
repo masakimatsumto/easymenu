@@ -19,7 +19,7 @@
 
 		<section id="recdishlist">
 			<div class="title">
-				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})のおすすめ</h3>
+				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})の献立</h3>
 			</div>
 			<form action="/easymenu/searchrecommenddishes" method="post" >
 				<input class="form-control" name="keyword" placeholder="{if isset($keyword)}{$keyword}{else}検索{/if}" id="search">
@@ -60,6 +60,7 @@
 				$('#search').attr('placeholder','');
 			});
 		</script>
+
 
 	</body>
 </html>

@@ -23,10 +23,12 @@
 				<h4>料理名</h4>
 				<textarea class="form-control" rows="1" name="dishName"></textarea>
 				<h4>カテゴリ</h4>
-				<select name="tag1" class="form-control">
+				<input type="radio" name="tag1" value="1" checked> <span>主菜</span>
+				<input type="radio" name="tag1" value="2"> <span>副菜</span>
+				<!--select name="tag1" class="form-control">
 					<option value="1">主菜</OPTION>
 					<option value="2">副菜</OPTION>
-				</select>
+				</select-->
 				<button type="submit" class="btn btn-default">登録</button>
 			</form>
 			<p>

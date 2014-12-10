@@ -16,13 +16,7 @@
 		<![endif]-->
 	</head>
 	<body>
-		<section id="navi">
-			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立を決める</a>
-		</section>
-		
-		<section id="promotion">
-		</section>
-
+	
 		<section id="selecteddishes">
 			<div class="title">
 				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})の献立</h3>
@@ -31,15 +25,17 @@
 				{if $selectdish}
 					{foreach from=$selectdish item=dishData}
 						<div>
-							<h4>
-								{if $dishData.tag == 1}
-									<span>主</span>
-									{else}
-									<span>副</span>
-								{/if}
+							{if $dishData.tag == 1}
+								<span class="category">主</span>
+								{else}
+								<span class="category">副</span>
+							{/if}
+							<span class="dishname" id="{$dishData.id}" title="{$dishData.dishname}">
 								{$dishData.dishname}
+							</span>
+							<span class="delete">
 								<a href="/easymenu/dishes/{$dishData.id}" class="btn btn-xs">メモ</a>
-							</h4>
+							</span>
 						</div>
 					{/foreach}
 				{else}
@@ -50,13 +46,28 @@
 			</div>
 		</section>
 		
+		<section id="promotion">
+			<img src="https://s3-ap-northeast-1.amazonaws.com/data.oceans-nadia.com/images/user_data/sponsor/banner_kadoya1_300x250.jpg">
+		</section>
+		
 		<section id ="footerNavi">
+			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立を決める</a>
 			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリーの編集</a>
 		</section>
 		
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
 		</section>
+		
+		<script type="text/javascript">
+			$(function(){
+				var str = "{$dishData.dishname}";
+				if((str.length)>15) {
+					$('#{$dishData.id}').css('font-size','14px');
+				}
+			});
+		</script>
+		
 		
 	</body>
 </html>

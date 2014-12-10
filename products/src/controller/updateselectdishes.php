@@ -20,7 +20,7 @@
 		// レコメンドを更新
 		$recdishes = Recommend::updateRecommenddishes($app, $uid);
 
-		header("location: /easymenu/selectdishes");
+		header("location: /easymenu/selectdishes#$day");
 		exit();
 	}
 

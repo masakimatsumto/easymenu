@@ -18,25 +18,29 @@
 
 		<section id="weeklydisheslist">
 				{foreach from=$selectedlist item=dishes key=day}
-					<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})</h3>
+					<h3 id="{$day}">{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})</h3>
 					{if ! empty($dishes)}
 						{foreach from=$dishes item=dish}
 							<p>
 								{if $dish.tag == '1'}
-									<span>主</span>
+									<span class="category">主</span>
 									{else}
-									<span>副</span>
+									<span class="category">副</span>
 								{/if}
-								{$dish.dishname}
-								<a href="/easymenu/deleteselectdishes/{$day}/{$dish.id}" class="btn btn-xs glyphicon glyphicon-remove"></a>
+								<span class="dishname">
+									{$dish.dishname}
+								</span>
+								<span class="delete">
+									<a href="/easymenu/deleteselectdishes/{$day}/{$dish.id}" class="btn btn-xs glyphicon glyphicon-remove"></a>
+								</span>
 							</p>
 						{/foreach}
 					{/if}
 					<p>
-						<span>主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+						<span class="category">主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
 					</p>
 					<p>
-						<span>副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+						<span class="category">副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">レパートリーから追加する</a>
 					</p>
 				{/foreach}
 		</section>

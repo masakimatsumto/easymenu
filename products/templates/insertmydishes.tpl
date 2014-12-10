@@ -65,7 +65,7 @@
 		<script type="text/javascript">
 			$(function(){
 				$("#insertButton").click(function () {
-					$("#insertMessage").fadeIn("slow");
+					$("#insertMessage").fadeIn("fast");
 					setTimeout(function () {
 						$("#insertForm").submit();
 					}, 1000);
