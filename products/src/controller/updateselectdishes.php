@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	$uid = $_SESSION['login_user_id'];
 	$day = $id1;
@@ -19,7 +19,9 @@
 		
 		// レコメンドを更新
 		$recdishes = Recommend::updateRecommenddishes($app, $uid);
-
+		
+		$_SESSION['message'] = $dishId;
+		
 		header("location: /easymenu/selectdishes#$day");
 		exit();
 	}

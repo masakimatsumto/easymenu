@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	
 	require("/home/masao-masao/products/easymenu/config.php");
 	

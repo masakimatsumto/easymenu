@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	$day = date("Y-m-d");
 	$uid = $_SESSION['login_user_id'];
@@ -9,8 +9,4 @@
 	// 前日分までのuseddishes を削除
 	$useddishes = Dish::deletePastUsedDishes($app, $uid, $day);
 
-	$app->render("top.tpl", array(
-		"uid" => $uid, 
-		"day" => $day,
-		"selectdish" => $selectdish
-		));
+	$app->render("top.tpl", array("uid" => $uid, "day" => $day,"selectdish" => $selectdish));

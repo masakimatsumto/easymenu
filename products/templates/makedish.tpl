@@ -14,7 +14,6 @@
 	    <![endif]-->
 	</head>
 	<body>
-
 		<section id="makedish">
 			<div class="title">
 				<h3>新しい料理を登録</h3>
@@ -25,10 +24,10 @@
 				<h4>カテゴリ</h4>
 				<input type="radio" name="tag1" value="1" checked> <span>主菜</span>
 				<input type="radio" name="tag1" value="2"> <span>副菜</span>
-				<!--select name="tag1" class="form-control">
-					<option value="1">主菜</OPTION>
-					<option value="2">副菜</OPTION>
-				</select-->
+				{if isset($day)}
+				<br>
+				<input type="checkbox" name="day" value="{$day}" checked>{$day}の献立にも追加
+				{/if}
 				<button type="submit" class="btn btn-default">登録</button>
 			</form>
 			<p>
@@ -41,6 +40,12 @@
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
 		</section>
+		{if !empty($dishName)}
+		<section id ="message">
+			{$dishName}を</br>
+			レパートリーに追加しました
+		</section>
+		{/if}
 
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>

@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang-"ja">
+<!DOCTYPE html>
+<html>
 	<head>
+		<title>かんたん献立</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="language" content="ja">
 		<!-- Loading Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/easymenu/css/main.css">
+		<link rel="apple-touch-icon-precomposed" href="/easymenu/img/icon.png">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +24,7 @@
 				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})の献立</h3>
 			</div>
 			<div class="list">
-				{if $selectdish}
+				{if isset($selectdish)}
 					{foreach from=$selectdish item=dishData}
 						<div>
 							{if $dishData.tag == 1}
@@ -38,6 +40,12 @@
 							</span>
 						</div>
 					{/foreach}
+					<div>
+						<span class="category">主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+					</div>
+					<div>
+						<span class="category">副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+					</div>
 				{else}
 					<h4>
 						まだ選ばれていません。
@@ -51,7 +59,7 @@
 		</section>
 		
 		<section id ="footerNavi">
-			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立を決める</a>
+			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立一覧</a>
 			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリーの編集</a>
 		</section>
 		

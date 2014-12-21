@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	$day = date("Y-m-d");
 	$uid = $_SESSION['login_user_id'];

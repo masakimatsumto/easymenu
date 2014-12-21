@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	$uid = $_SESSION['login_user_id'];
 

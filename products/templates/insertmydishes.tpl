@@ -34,7 +34,7 @@
 						</label>
 					</div>
 				{/foreach}
-				<button id="insertButton" class="btn btn-default" value="追加する" type="" onclick="return false;">追加</button>
+				<button id="insertButton" class="btn btn-default" value="追加する" type="submit">追加</button>
 			</form>
 		</sectison>
 
@@ -43,9 +43,11 @@
 			<a href="/easymenu/makedish" class="btn btn-default">新しい料理を登録</a>
 		</section>
 
+		{if ($message == "completion")}
 		<section id="insertMessage">
 			<div>登録完了！</div>
 		</section>
+		{/if}
 
 		<section id="footer">
 			<a href=https://twitter.com/masakiMatsumoto>@masakiMatsumoto</a>
@@ -54,7 +56,6 @@
 		<script type="text/javascript">
 			$(function(){
 				$("#insertButton").hide();
-				$("#insertMessage").hide();
 				
 				$('label').click(function(){
 					$('#insertButton').css('display','block');
@@ -64,12 +65,7 @@
 		
 		<script type="text/javascript">
 			$(function(){
-				$("#insertButton").click(function () {
-					$("#insertMessage").fadeIn("fast");
-					setTimeout(function () {
-						$("#insertForm").submit();
-					}, 1000);
-				});
+				$("#insertMessage").fadeOut(2000);
 			});
 		</script>
 		

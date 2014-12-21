@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class Dish{
 	
@@ -86,7 +86,7 @@ class Dish{
 	}
 
 
-	// 新しい料理名を登録
+	// 新しい料理名を登録し、ユーザーのレパートリーにも登録
 	static public function makeDish($app, $uid, $dishName, $tag1){
 
 		$stmt = $app->db->prepare('INSERT INTO dishes (name, tag1) VALUES (:name, :tag1)');
@@ -109,7 +109,7 @@ class Dish{
 		$stmt = $app->db->prepare('UPDATE users SET mydishes = :a WHERE id = :userId');
 		$stmt ->execute(array(':userId' => $uid, ':a' => $a));
 		
-		return;
+		return $dishId;
 	}
 	
 	

@@ -48,7 +48,7 @@
 		<section id ="footerNavi">
 			<a href="/easymenu/" class="btn btn-default glyphicon glyphicon-home"></a>
 			<a href="/easymenu/selectdishes" class="btn btn-default">献立を作る</a>
-			<a href="/easymenu/makedish" class="btn btn-default">新しい料理を登録</a>
+			<a href="/easymenu/makedish/{$day}" class="btn btn-default">新しい料理を登録</a>
 		</section>
 
 		<section id="footer">
