@@ -15,7 +15,6 @@
 	}
 
 	if($dishId){
-		$recdishes = Recommend::updateRecommenddishes($app, $uid);
 		
 		$_SESSION['message'] = "completion";
 		header("location: /easymenu/insertmydishes");

@@ -207,7 +207,7 @@ class Dish{
 	static public function searchRecommenddishes($app, $uid, $cat, $keyword){
 		$searchResult = array();
 
-		$reclist = Recommend::getRecList($app, $uid, $cat);
+		$reclist = Recommend::makeRecList($app, $uid, $cat);
 		if(isset($reclist)){
 			foreach ($reclist as $dishId => $dishName) {
 				if(mb_strpos($dishName, $keyword)!==FALSE){

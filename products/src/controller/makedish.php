@@ -10,7 +10,6 @@
 		$dishName = $_POST['dishName'];
 		$tag1 = $_POST['tag1'];
 		$dishId = Dish::makeDish($app, $uid, $dishName, $tag1);
-		$goRec = Recommend::updateRecommenddishes($app, $uid);
 		
 		// 日付を持っていたら献立に追加
 		if(isset($_POST['day'])){
@@ -21,9 +20,6 @@
 
 			// useddishes のにデータを更新
 			$useddishes = Dish::updateUseddishes($app, $uid, $dishId);
-			
-			// レコメンドを更新
-			$recdishes = Recommend::updateRecommenddishes($app, $uid);
 			
 			// メッセージをセット
 			$_SESSION['message'] = $dishId;

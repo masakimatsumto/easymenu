@@ -7,7 +7,6 @@
 	$mydishes = User::deleteMydishList($app, $uid, $dishId);
 
 	if($dishId){
-		$recdishes = Recommend::updateRecommenddishes($app, $uid);
 		header("location: /easymenu/deletemydishes");
 		exit();
 	}
