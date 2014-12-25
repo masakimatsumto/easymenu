@@ -28,10 +28,10 @@
 			</div>
 			<form action="/easymenu/insertmydishes" method="post" id="insertForm">
 				{foreach from=$otherlist item=dishinfo}
-					<div class="checkbox {$dishinfo.id}">
-						<label>
-							<input type="checkbox" name ="{$dishinfo.id}" value="{$dishinfo.id}"> {$dishinfo.dishname}
-						</label>
+					<div class="checkbox">
+						<label class="">
+							<input type="checkbox" name ="{$dishinfo.id}" value="{$dishinfo.id}" id="ids">
+							{$dishinfo.dishname}</label>
 					</div>
 				{/foreach}
 				<button id="insertButton" class="btn btn-default" value="追加する" type="submit">追加</button>
@@ -68,6 +68,7 @@
 				$("#insertMessage").fadeOut(2000);
 			});
 		</script>
+
 		
 	</body>
 </html>

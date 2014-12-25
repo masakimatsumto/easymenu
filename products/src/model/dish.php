@@ -208,14 +208,13 @@ class Dish{
 		$searchResult = array();
 
 		$reclist = Recommend::getRecList($app, $uid, $cat);
-		foreach ($reclist as $dishId => $dishName) {
-
-			if(mb_strpos($dishName, $keyword)!==FALSE){
-				$searchResult[$dishId] = $dishName;
+		if(isset($reclist)){
+			foreach ($reclist as $dishId => $dishName) {
+				if(mb_strpos($dishName, $keyword)!==FALSE){
+					$searchResult[$dishId] = $dishName;
+				}
 			}
-
 		}
-
 		return $searchResult;
 
 	}

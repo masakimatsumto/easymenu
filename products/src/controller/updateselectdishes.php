@@ -20,7 +20,7 @@
 		// レコメンドを更新
 		$recdishes = Recommend::updateRecommenddishes($app, $uid);
 		
-		$_SESSION['message'] = $dishId;
+		$_SESSION['message'] = $day."_".$dishId;
 		
 		header("location: /easymenu/selectdishes#$day");
 		exit();

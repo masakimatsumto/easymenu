@@ -32,10 +32,10 @@ class Recommend{
 	// useddishes と mydishes を比較してrecommend を更新
 	static public function updateRecommenddishes($app, $uid){
 		
-		$stmt = $app->db->prepare('SELECT useddishes FROM users WHERE id = :userId');
-		$stmt ->execute(array(':userId' => $uid));
-		$item = $stmt->fetch(PDO::FETCH_ASSOC);
-		$useddishlist = json_decode($item['useddishes'], true);
+		//$stmt = $app->db->prepare('SELECT useddishes FROM users WHERE id = :userId');
+		//$stmt ->execute(array(':userId' => $uid));
+		//$item = $stmt->fetch(PDO::FETCH_ASSOC);
+		//$useddishlist = json_decode($item['useddishes'], true);
 		
 		$stmt = $app->db->prepare('SELECT mydishes FROM users WHERE id = :userId');
 		$stmt ->execute(array(':userId' => $uid));
@@ -63,4 +63,23 @@ class Recommend{
 		
 	}
 	
+	
+	// レコメンドの料理を返す
+	static public function getRecommendeddishes($app, $uid){
+
+		$stmt = $app->db->prepare('SELECT recommendeddishes FROM users WHERE id = :userId');
+		$stmt ->execute(array(':userId' => $uid));
+		$item = $stmt->fetch(PDO::FETCH_ASSOC);
+		$recDisheslist = json_decode($item["recommendeddishes"], true);
+
+		if(empty($recDisheslist)) return;
+
+		$reclist = array();
+		foreach($recDisheslist as $cat => $dishes){
+			$dishData = Dish::getDishData($app, $dishes[0]);
+			$reclist[$cat][$dishData['id']] = $dishData['dishname'];
+		}
+		
+		return $reclist;
+	}
 }

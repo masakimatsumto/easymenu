@@ -55,7 +55,6 @@
 		</section>
 		
 		<section id="promotion">
-			<img src="https://s3-ap-northeast-1.amazonaws.com/data.oceans-nadia.com/images/user_data/sponsor/banner_kadoya1_300x250.jpg">
 		</section>
 		
 		<section id ="footerNavi">

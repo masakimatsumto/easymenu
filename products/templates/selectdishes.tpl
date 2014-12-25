@@ -20,13 +20,13 @@
 					<h3 id="{$day}">{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})</h3>
 					{if ! empty($dishes)}
 						{foreach from=$dishes item=dish}
-							<p>
+							<p id="dishId_{$day}_{$dish.id}">
 								{if $dish.tag == '1'}
 									<span class="category">主</span>
 									{else}
 									<span class="category">副</span>
 								{/if}
-								<span id="dishId_{$dish.id}" class="dishname">
+								<span class="dishname">
 									{$dish.dishname}
 								</span>
 								<span class="delete">
@@ -34,7 +34,31 @@
 								</span>
 							</p>
 						{/foreach}
+					{else}
+						{if isset($reclist.1)}
+						<p>
+							<span class="category">主</span>
+							おすすめ
+							<span class="dishname">
+							{foreach from=$reclist[1] item=dish key=id}
+							{$dish}
+							<a href="/easymenu/updateselectdishes/{$day}/{$id}">追加</a>
+							{/foreach}
+						</p>
+						{/if}
+						{if isset($reclist.2)}
+						<p>
+							<span class="category">副</span>
+							おすすめ
+							<span class="dishname">
+							{foreach from=$reclist[2] item=dish key=id}
+							{$dish}
+							<a href="/easymenu/updateselectdishes/{$day}/{$id}">追加</a>
+							{/foreach}
+						</p>
+						{/if}
 					{/if}
+					
 					<p>
 						<span class="category">主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
 					</p>
@@ -84,7 +108,7 @@
 					}
 				});
 				
-				$('#dishId_{$message}').css('font-weight','bold');
+				$('#dishId_{$message}').css("background-color","#FFFACD");
 				
 				$('#closebutton').click(function(){
 					$("#userText").hide();

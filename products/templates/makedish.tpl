@@ -25,8 +25,9 @@
 				<input type="radio" name="tag1" value="1" checked> <span>主菜</span>
 				<input type="radio" name="tag1" value="2"> <span>副菜</span>
 				{if isset($day)}
-				<br>
-				<input type="checkbox" name="day" value="{$day}" checked>{$day}の献立にも追加
+				<p>
+				<input type="checkbox" name="day" value="{$day}" checked><span>{$day}の献立にも追加</span>
+				</p>
 				{/if}
 				<button type="submit" class="btn btn-default">登録</button>
 			</form>
