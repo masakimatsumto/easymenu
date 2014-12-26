@@ -3,20 +3,14 @@
 class Recommend{
 	
 	// レコメンドリストの作成
-	static public function makeRecList($app, $uid, $cat){
-
-		if($cat == "main"){
-			$b = 1;
-		}else{
-			$b = 2;
-		}
+	static public function makeRecList($app, $uid){
 
 		$stmt = $app->db->prepare('SELECT mydishes FROM users WHERE id = :userId');
 		$stmt ->execute(array(':userId' => $uid));
 		$item = $stmt->fetch(PDO::FETCH_ASSOC);
 		$mydishlist = json_decode($item['mydishes'], true);
 		
-		if(!isset($mydishlist)) return;
+		if(empty($mydishlist)) return;
 
 		shuffle($mydishlist);
 		
@@ -27,28 +21,6 @@ class Recommend{
 			$reclist[$dishData['tag']][$dishData['id']] = $dishData['dishname'];
 		}
 
-		if(empty($reclist[$b])) return;
-
-		return $reclist[$b];
-	}
-
-	
-	// レコメンドの料理を返す
-	static public function getRecommendeddishes($app, $uid){
-
-		$stmt = $app->db->prepare('SELECT recommendeddishes FROM users WHERE id = :userId');
-		$stmt ->execute(array(':userId' => $uid));
-		$item = $stmt->fetch(PDO::FETCH_ASSOC);
-		$recDisheslist = json_decode($item["recommendeddishes"], true);
-
-		if(empty($recDisheslist)) return;
-
-		$reclist = array();
-		foreach($recDisheslist as $cat => $dishes){
-			$dishData = Dish::getDishData($app, $dishes[0]);
-			$reclist[$cat][$dishData['id']] = $dishData['dishname'];
-		}
-		
 		return $reclist;
 	}
 

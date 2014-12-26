@@ -32,8 +32,8 @@ a {
 }
 #footer {
 	margin-top: 20px;
-	height: 200px;
-	padding: 80px 0px;
+	height: 100px;
+	padding: 20px 0px;
 	background-color: #fcfbf5;
 	text-align: center;
 	display:block;
@@ -320,6 +320,7 @@ a {
 }
 #insertdishes div#navBotton a.btn{
 	background-color: #ffffff;
+	border: 1px solid #889b00;
 	width: 150px;
 }
 #insertdishes form div.checkbox{	
@@ -361,6 +362,7 @@ a {
 	padding: 25px 0px;
 	vertical-align: center;
 }
+
 
 /* deletemydishes */
 

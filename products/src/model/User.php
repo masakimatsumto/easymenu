@@ -84,7 +84,9 @@ class User{
 		if(isset($mydishlist)){
 				$d = array_search($dishId, $mydishlist);
 			unset($mydishlist[$d]);
-		}		
+		}else{
+			return;
+		}
 
 		$a = json_encode($mydishlist);
 		

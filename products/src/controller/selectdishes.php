@@ -14,12 +14,23 @@
 	}
 
 	if(!empty($dishId)){
-		$recdish = Recommend::getRecdish($app, $uid, $dishId);
+		$reclist = Recommend::getRecdish($app, $uid, $dishId);
+		if(empty($reclist)){
+			$reclist = Recommend::makeRecList($app, $uid);
+		}
+		foreach($reclist as $cat => $dishes){
+			$reclist[$cat] = array_slice($dishes,0,1, true);
+		}
 	}else{
-		$recdish = "";
+		// おすすめを取得
+		$reclist = Recommend::makeRecList($app, $uid);
+		if(!empty($reclist)){
+			foreach($reclist as $cat => $dishes){
+				$reclist[$cat] = array_slice($dishes,0,1, true);
+			}
+		}
 	}
 
-	$reclist = Recommend::getRecommendeddishes($app, $uid);
 
 	// 選択されているレシピの取得
 	$selectedlist = User::selectedList($app, $uid, $day);
@@ -33,6 +44,5 @@
 		'userText' => $userText ,
 		'selectedlist' => $selectedlist,
 		'message' => $message,
-		'reclist' => $reclist,
-		'recdish' => $recdish
+		'reclist' => $reclist
 		));

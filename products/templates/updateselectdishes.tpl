@@ -21,13 +21,13 @@
 			<div class="title">
 				<h3>{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})の献立</h3>
 			</div>
-			<form action="/easymenu/searchrecommenddishes" method="post" >
-				<input class="form-control" name="keyword" placeholder="{if isset($keyword)}{$keyword}{else}検索{/if}" id="search">
-				<input type="hidden" name="day" value="{$day}">
-				<input type="hidden" name="cat" value="{$cat}">
-			</form>
-			{if is_array($reclist)}
-				{foreach from=$reclist item=dishname key=recid}
+			{if !empty($reclist.$catId)}
+				<form action="/easymenu/searchrecommenddishes" method="post" >
+					<input class="form-control" name="keyword" placeholder="{if isset($keyword)}{$keyword}{else}検索{/if}" id="search">
+					<input type="hidden" name="day" value="{$day}">
+					<input type="hidden" name="cat" value="{$cat}">
+				</form>
+				{foreach from=$reclist.$catId item=dishname key=recid}
 					<div class="dishlist">
 						<h4>
 							<a href="/easymenu/updateselectdishes/{$day}/{$recid}" class="btn btn-warning make btn-xs">作る</a>

@@ -1,5 +1,5 @@
-.DS_Store
-products/.DS_Store
+*.DS_Store
 products/compiled/
-products/templates/.DS_Store
 products/config.php
+products/src/controller/test.php
+

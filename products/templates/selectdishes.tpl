@@ -38,22 +38,22 @@
 						{if isset($reclist.1)}
 						<p>
 							<span class="category">主</span>
-							おすすめ
+							<span class="recicon btn btn-xs btn-success">Pick</span>
 							<span class="dishname">
 							{foreach from=$reclist[1] item=dish key=id}
 							{$dish}
-							<a href="/easymenu/updateselectdishes/{$day}/{$id}">追加</a>
+							<a href="/easymenu/updateselectdishes/{$day}/{$id}" class="btn btn-warning btn-xs">追加</a>
 							{/foreach}
 						</p>
 						{/if}
 						{if isset($reclist.2)}
 						<p>
 							<span class="category">副</span>
-							おすすめ
+							<span class="recicon btn btn-xs btn-success">おすすめ</span>
 							<span class="dishname">
 							{foreach from=$reclist[2] item=dish key=id}
 							{$dish}
-							<a href="/easymenu/updateselectdishes/{$day}/{$id}">追加</a>
+							<a href="/easymenu/updateselectdishes/{$day}/{$id}" class="btn btn-warning btn-xs">追加</a>
 							{/foreach}
 						</p>
 						{/if}
