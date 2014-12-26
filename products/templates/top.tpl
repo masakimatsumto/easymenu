@@ -35,16 +35,22 @@
 							<span class="dishname" id="{$dishData.id}" title="{$dishData.dishname}">
 								{$dishData.dishname}
 							</span>
-							<span class="delete">
+							<span class="memo">
 								<a href="/easymenu/dishes/{$dishData.id}" class="btn btn-xs">メモ</a>
 							</span>
 						</div>
 					{/foreach}
 					<div>
-						<span class="category">主</span> <a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+						<span class="category">主</span>
+						<a href="/easymenu/updateselectdishes/{$day}/main" class="btn btn-warning btn-xs">
+							レパートリーから追加する
+						</a>
 					</div>
 					<div>
-						<span class="category">副</span> <a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">レパートリーから追加する</a>
+						<span class="category">副</span>
+						<a href="/easymenu/updateselectdishes/{$day}/sub" class="btn btn-warning btn-xs">
+							レパートリーから追加する
+						</a>
 					</div>
 				{else}
 					<h4>

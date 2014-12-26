@@ -74,7 +74,12 @@ a {
 	font-size: 16px;
 	margin:0px;
 }
-#selecteddishes div span.delete a.btn {
+#selecteddishes div a.btn-warning{
+	background-color: #ff9933;
+	font-size:14px;
+}
+
+#selecteddishes div span.memo a.btn {
 	background-color: #fcfbf5;
 	border-color: #e2dbc9;
 	float:right;
@@ -116,6 +121,15 @@ a {
 	margin-left: 3px;
 	color: #e2dbc9;
 	border: 1px solid #e2dbc9;
+}
+#weeklydisheslist p span.recicon{
+	background-color: #f3a58e;
+	border-color: #f3a58e;
+	font-weight: bold;
+	color: #ffffff;
+	border-radius: 2px;
+	font-size:9px;
+	padding: 4px 3px;
 }
 #weeklydisheslist p a.btn-warning{
 	background-color: #ff9933;

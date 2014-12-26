@@ -38,7 +38,7 @@
 						{if isset($reclist.1)}
 						<p>
 							<span class="category">主</span>
-							<span class="recicon btn btn-xs btn-success">Pick</span>
+							<span class="recicon">おすすめ</span>
 							<span class="dishname">
 							{foreach from=$reclist[1] item=dish key=id}
 							{$dish}
@@ -49,7 +49,7 @@
 						{if isset($reclist.2)}
 						<p>
 							<span class="category">副</span>
-							<span class="recicon btn btn-xs btn-success">おすすめ</span>
+							<span class="recicon">おすすめ</span>
 							<span class="dishname">
 							{foreach from=$reclist[2] item=dish key=id}
 							{$dish}
