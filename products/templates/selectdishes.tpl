@@ -18,7 +18,7 @@
 		<section id="weeklydisheslist">
 				{foreach from=$selectedlist item=dishes key=day}
 					<h3 id="{$day}">{$day|date_format:"%m"}月{$day|date_format:"%e"}日({$day|date_format:"%a"})</h3>
-					{if ! empty($dishes)}
+					{if !empty($dishes)}
 						{foreach from=$dishes item=dish}
 							<p id="dishId_{$day}_{$dish.id}">
 								{if $dish.tag == '1'}
@@ -38,22 +38,22 @@
 						{if isset($reclist.1)}
 						<p>
 							<span class="category">主</span>
-							<span class="recicon">おすすめ</span>
-							<span class="dishname">
 							{foreach from=$reclist[1] item=dish key=id}
+							<span class="recicon" id="{$day}_{$id}">おすすめ</span>
+							<span class="dishname">
 							{$dish}
-							<a href="/easymenu/updateselectdishes/{$day}/{$id}" class="btn btn-warning btn-xs">追加</a>
+							<span class="btn btn-warning btn-xs adddish {$day}_{$id}" name="{$day}_{$id}" title="ajaxupdateselectdishes/{$day}/{$id}">追加</span>
 							{/foreach}
 						</p>
 						{/if}
 						{if isset($reclist.2)}
 						<p>
 							<span class="category">副</span>
-							<span class="recicon">おすすめ</span>
-							<span class="dishname">
 							{foreach from=$reclist[2] item=dish key=id}
+							<span class="recicon" id="{$day}_{$id}">おすすめ</span>
+							<span class="dishname">
 							{$dish}
-							<a href="/easymenu/updateselectdishes/{$day}/{$id}" class="btn btn-warning btn-xs">追加</a>
+							<span class="btn btn-warning btn-xs adddish {$day}_{$id}" name="{$day}_{$id}" title="ajaxupdateselectdishes/{$day}/{$id}">追加</a>
 							{/foreach}
 						</p>
 						{/if}
@@ -112,6 +112,21 @@
 				
 				$('#closebutton').click(function(){
 					$("#userText").hide();
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(function(){
+				$('.adddish').click(function(){
+					var postdata = $(this).attr('title');
+					var tagetid = $(this).attr('name');
+					$.post(
+						postdata,
+						function(){
+							$('.' + tagetid).fadeOut();
+							$('#' + tagetid).fadeOut();
+					});
 				});
 			});
 		</script>

@@ -36,6 +36,22 @@
 				{/foreach}
 				<button id="insertButton" class="btn btn-default" value="追加する" type="submit">追加</button>
 			</form>
+<ul>
+<li class="">
+<input id="ingredient_ids_" name="ingredient_ids[]" type="checkbox" value="22120315">
+骨付きもも肉
+<input id="recipe_id" name="recipe_id" type="hidden" value="1638999">
+</li>
+<li class="">
+<input id="ingredient_ids_" name="ingredient_ids[]" type="checkbox" value="22120317">
+しょうゆ
+<input id="recipe_id" name="recipe_id" type="hidden" value="1638999">
+</li>
+</ul>
+
+
+
+
 		</sectison>
 
 		<section id ="footerNavi">
@@ -68,6 +84,7 @@
 				$("#insertMessage").fadeOut(2000);
 			});
 		</script>
+
 
 		
 	</body>

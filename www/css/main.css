@@ -135,6 +135,10 @@ a {
 	background-color: #ff9933;
 	font-size:14px;
 }
+#weeklydisheslist p span.btn-warning{
+	background-color: #ff9933;
+	font-size:14px;
+}
 #weeklydisheslist p.dayend{
 	display: block;
 	margin-bottom: 20px;
