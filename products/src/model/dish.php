@@ -185,23 +185,6 @@ class Dish{
 		$stmt ->execute(array(':userId' => $uid, ':day' => $day, ':q' => $q));
 	}
 	
-	
-	// useddishes のデータを削除
-	static public function deleteUseddishIds($app, $uid, $dishId){
-		
-		$stmt = $app->db->prepare('SELECT useddishes FROM users WHERE id = :userId');
-		$stmt ->execute(array(':userId' => $uid));
-		$item = $stmt->fetch(PDO::FETCH_ASSOC);
-		$arr = json_decode($item['useddishes'], true);
-		
-		$d = array_search($dishId, $arr);
-		unset($arr[$d]);
-		
-		$q = json_encode($arr);
-		
-		$stmt = $app->db->prepare('UPDATE users SET useddishes = :q WHERE id = :userId');
-		$stmt ->execute(array(':q' => $q, ':userId' => $uid));
-	}	
 
 	// 献立検索の結果を取得
 	static public function searchRecommenddishes($app, $uid, $cat, $keyword){

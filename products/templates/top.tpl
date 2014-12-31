@@ -64,7 +64,7 @@
 		</section>
 		
 		<section id ="footerNavi">
-			<a href="/easymenu/selectdishes/{$day}" class="btn btn-default">献立一覧</a>
+			<a href="/easymenu/selectdishes" class="btn btn-default">献立一覧</a>
 			<a href="/easymenu/insertmydishes" class="btn btn-default">レパートリーの編集</a>
 		</section>
 		
