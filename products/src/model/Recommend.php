@@ -41,7 +41,7 @@ class Recommend{
 
 			$stmt = $app->db->prepare('SELECT dishids FROM selecteddishes WHERE user_id = :userId AND date = :date');
 			$stmt ->execute(array(':userId' => $uid, ':date' => $day));
-			$item = $stmt->fetch(PDO::FETCH_ASSOC);		
+			$item = $stmt->fetch(PDO::FETCH_ASSOC);
 
 			if($item){
 				$item = json_decode($item['dishids'], true);

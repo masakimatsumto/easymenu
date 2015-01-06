@@ -22,7 +22,8 @@
 			$useddishes = Dish::updateUseddishes($app, $uid, $dishId);
 			
 			// メッセージをセット
-			$_SESSION['message'] = $dishId;
+			$_SESSION['message'] = $day."_".$dishId;
+			$_SESSION['dishId'] = $dishId;
 			
 			header("location: /easymenu/selectdishes#$day");
 			exit();

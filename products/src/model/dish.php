@@ -189,15 +189,22 @@ class Dish{
 	// 献立検索の結果を取得
 	static public function searchRecommenddishes($app, $uid, $cat, $keyword){
 		$searchResult = array();
-
-		$reclist = Recommend::makeRecList($app, $uid, $cat);
+		
+		if($cat == "main"){
+			$cat = 1;
+		}else{
+			$cat = 2;
+		}
+		
+		$reclist = Recommend::makeRecList($app, $uid);
 		if(isset($reclist)){
-			foreach ($reclist as $dishId => $dishName) {
+			foreach ($reclist[$cat] as $dishId => $dishName) {
 				if(mb_strpos($dishName, $keyword)!==FALSE){
-					$searchResult[$dishId] = $dishName;
+					$searchResult[$cat][$dishId] = $dishName;
 				}
 			}
 		}
+		
 		return $searchResult;
 
 	}
